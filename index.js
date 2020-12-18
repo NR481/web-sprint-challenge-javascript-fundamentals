@@ -17,7 +17,7 @@ myFunction();
 
 //🚀🚀🚀 ⬇️ 📝 Explanation ⬇️ 📝 🚀🚀🚀: 
 
-
+// "nestedFunction can access the internal variable because they're both within the scope of myFunction."  
 
 
 
@@ -28,10 +28,14 @@ myFunction();
     
 For example, `summation(4)` should return 10 because 1+2+3+4 is 10. Note, you may use a for loop for this function if you wish */
 
-function summation(/*Your Code Here*/) {
-  /*Your Code Here*/
-
+function summation(num) {
+  let digits = [];
+  for(let i=1;i<=num;i++){
+    digits.push(i);
   }
+  let total = digits.reduce((a,b) => a + b, 0);
+  return total;
+}
  
 
 // 🦁🦁🦁 Topic 2: ADVANCED Array Methods 🦁🦁🦁
@@ -56,8 +60,11 @@ const zooAnimals = [
   displayNames will be an array of strings, and each string should follow this pattern: "name: {name}, scientific: {scientific name}"
   */
 
-  function animalNames(/*Your Code Here*/){
-    /*Your Code Here*/
+  function animalNames(array){
+    let displayNames = [];
+    array.forEach((names) => {
+      displayNames.push(`name: ${names.animal_name}, scientific: ${names.scientific_name}`)});
+    return displayNames;
   }
   
 
@@ -67,8 +74,11 @@ const zooAnimals = [
   For example: ['jackal, asiatic', .....]
   */
 
-  function lowerCaseNames(/*Your Code Here*/){
-    /*Your Code Here*/
+  function lowerCaseNames(array){
+    let names = array.map((el) => {
+      return el.animal_name.toLowerCase();
+    });
+    return names;
   }
   
   
